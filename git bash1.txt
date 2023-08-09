@@ -1,0 +1,70 @@
+Домашняя работа №1 по Linux terminal
+1) pwd - посмотреть где я
+2) mkdir- создать папку или несколько папок через пробел.Создаются папки в текущей директории.
+3) cd - заходим в папку. Если не в текущей директории, то нужно прописать путь.
+4) mkdir file1 file2 file3 - создание сразу нескольких папок одновременно.
+5) сd file1 - захожу в любую папку.
+6) touch name1.txt name2.txt name3.txt age1.json age2.json - создание 5-ти файлов.
+7) mkdir A B C -создание сразу нескольких папок одновременно.
+8) ls или ls -1 или ls -la показывает содержимое папки.
+9) cat >name1.txt - заходим и редактируем файл. 
+10) cat >name1.txt
+row1
+row2
+row2
+11) enter cntrl+C - выходим из файла.
+12) cd .. - выход из папки на уровень выше.
+13) mv file1/name1.txt file1/name2.txt file2 - перемещение из одной папки в другую файла name1.txt
+14) cp file1/age1.json file1/age2.jsonc file2 - копирование файлов в другую папку.
+cp file3/ file4/ -r - дублирование каталога.
+15) find . -iname "name2.txt" - найти файл в текущей директории без учета регистра. 
+find file2/name2.txt - найти файл по имени.
+16) tail -F age1.json - посмотреть содержимое в реальном времени.
+tail -F age1.json|grep "age" - посмотреть содержимое в реальном времени с grep,grep -  ищет информацию в файле.
+cat name2.txt| grep "row"  - будет искать row в файле name2.txt. 
+17) head -n1 name1.txt - вывести несколько первых строк из текстового файла.
+18) tail -n1 name1data.txt - вывести несколько последних строк из текстового файла.
+19) less age1.json - просмотр содержимого длинного файла. q -выход из режима просмотра.  
+20) date - вывести дату и время.
+21) nano file.txt - открытие файла в текстовом редакторе.
+
+Задания *
+1) Отправить запрос на сервер http://162.55.220.72:5006/terminal-hw-request
+curl "http://162.55.220.72:5005/get_method?name=Marina&age=36" нажать Enter
+2) Скрипт
+vim script.sh или  nano script.sh
+#!/bin/bash
+echo "Вы вошли в папку qa1"
+cd qa1
+pwd
+echo "---------------"
+echo "Создаем три папки a b c"
+mkdir a b c
+ls -1
+echo "---------------"
+echo "Заходим в папку а"
+cd a
+pwd
+echo "Создаем пять файлов f1.txt f2.txt f3.txt m1.json m2.json"
+touch f1.txt f2.txt f3.txt m1.json m2.json
+ls -1
+echo "---------------"
+echo "Cоздаем три папки d e f"
+mkdir d e f
+ls -1
+echo "---------------"
+echo "Перемещаем файлы f1.txt f2.txt в папку b"
+cd ..
+mv a/f1.txt a/f2.txt b
+cd b
+echo "Содержимое папки b"
+ls -1
+exit
+Esc :wq
+
+chmod +x script.sh - для запуска через ./script.sh
+иначе каждый раз для запуска скрипта прописываем команду bash script.sh
+
+
+
+
